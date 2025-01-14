@@ -12,7 +12,7 @@ public class Main {
     persona1.marca = "gris";
     persona1.ka = (float) 1.68;
     persona1.feo = "feo";
-   
+    System.out.println("PERSONA 1:");
     System.out.println("el color de piel: " + persona1.color);
     System.out.println("color de cabello: " + persona1.marca);
     System.out.println("altura: " +persona1.ka);
@@ -23,7 +23,7 @@ public class Main {
     coche2.marca = "disparos";
     coche2.ka = 15;
     coche2.feo = "no";
-   
+    System.out.println("PERSONA 1:");
     System.out.println("\n nombre d juego: " + coche2.color);
     System.out.println("tipo d juego: " + coche2.marca);
     System.out.println("efepese por segundo: " +coche2.ka);

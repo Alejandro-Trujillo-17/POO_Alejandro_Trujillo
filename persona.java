@@ -1,0 +1,10 @@
+Main persona1 = new Main();
+    persona1.color = "negro";
+    persona1.marca = "gris";
+    persona1.ka = (float) 1.68;
+    persona1.feo = "feo";
+    System.out.println("PERSONA 1:");
+    System.out.println("el color de piel: " + persona1.color);
+    System.out.println("color de cabello: " + persona1.marca);
+    System.out.println("altura: " +persona1.ka);
+    System.out.println("overall: "+persona1.feo );
