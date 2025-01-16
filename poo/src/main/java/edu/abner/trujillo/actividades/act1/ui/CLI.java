@@ -5,9 +5,12 @@ import java.util.Scanner;
 
 public class CLI {
     public static void ShowMenu() {
-        System.out.println("crear estudiante");
-        System.out.println("listar estudiantes");
-        System.out.println("salir");
+        System.out.println("""
+            Menu
+            1. Crear estudiante
+            2. Listar estudiantes
+            3. Salir
+        """);
     }
     public void mostrar(String mensaje){
         System.out.println(mensaje);
@@ -32,10 +35,6 @@ public class CLI {
                 case 2:
                     System.out.println("listar estudiante");
                     break;
-
-
-
-
                 default:
                 System.out.println("error");
                 break;
