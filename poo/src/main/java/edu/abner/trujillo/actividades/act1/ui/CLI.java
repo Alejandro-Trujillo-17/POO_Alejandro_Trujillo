@@ -3,46 +3,51 @@ package edu.abner.trujillo.actividades.act1.ui;
 //import java.lang.foreign.Linker;
 import java.util.Scanner;
 
+import edu.abner.trujillo.actividades.act1.process.StockManager;
+
+
 public class CLI {
-    public static void ShowMenu() {
-        System.out.println("""
-            Menu
-            1. Crear carro
-            2. Listar carros
-            3. Salir
-        """);
-    }
-    public void mostrar(String mensaje){
-        System.out.println(mensaje);
-    }
-    public void mostrarError(String mensaje){
-        System.out.println("Error: " + mensaje);
-    }
-    public void mostrarEstudiante(String[] estudiantes){
-        for (String estudiante : estudiantes){
-            System.out.println(estudiante);
-        }
-    }
-    public static void launch() {
-        ShowMenu();
-        Scanner scanner = new Scanner(System.in);
-        int opcion= scanner.nextInt();
-        while (opcion !=3){
-            switch (opcion) {
-                case 1 -> {
-                    System.out.println("Agregar modelo");
-                    System.out.println("Agregar marca");
-                    System.out.println("Agregar numero de puertas");
-                    System.out.println("Agregar color");
+    
+    public static void runApp() {
+        StockManager stockManager = new StockManager();
+        showMenu();
+        try (Scanner scanner = new Scanner(System.in)) {
+            int opcion= scanner.nextInt();
+            while (opcion!=3){
+                switch (opcion){
+                    case 1 -> {
+                        System.out.println("Introduce el numero de puertas");
+                        int numPuertas = scanner.nextInt();scanner.nextLine();
+
+                        System.out.println("Introduce el color");
+                        String color = scanner.nextLine();
+
+                        System.out.println("Introduce el modelo");
+                        String modelo = scanner.nextLine();
+
+                        System.out.println("Introduce el marca");
+                        String marca = scanner.nextLine();
+                        stockManager.addCar(modelo,marca,numPuertas,color);
+                    }
+                    case 2 -> {
+                        System.out.println("Catalogo de carros");
+                        System.out.println(stockManager.getStock());
+                    }
+                    default -> System.out.println("opcion no valida");
                 }
-                case 2 -> System.out.println("listar estudiante");
-                default -> System.out.println("error");
-
+                showMenu();
+                opcion = scanner.nextInt();
             }
-
-            //ectect
-            ShowMenu();
-            opcion=scanner.nextInt();
         }
+    }
+    public static void showMenu(){
+        System.out.println("""
+                Menu
+                1. agregar Carro al catalogo
+                2. mostrar catalogo
+                3. Salir
+                """);
     }
 }
+    
+

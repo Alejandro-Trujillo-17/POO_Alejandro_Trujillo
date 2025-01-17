@@ -1,10 +1,21 @@
-package edu.abner.trujillo.actividades.act1.process;
+package edu.abner.trujillo.actividades.act1.models;
 
 public class Car {
     private String modelo;
     private String marca;
     private int numeroPuerta;
     private String color;
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "modelo='" + modelo + '\'' +
+                ", marca='" + marca + '\'' +
+                ", numeroPuertas=" + numeroPuerta +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
 
     public Car(String modelo, String marca, int numeroPuerta, String color) {
         this.modelo = modelo;
