@@ -1,24 +1,25 @@
 package edu.abner.trujillo.actividades.act1.process;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.abner.trujillo.actividades.act1.models.Car;
-
+import edu.abner.trujillo.actividades.act1.models.Persona;
 
 public class StockManager {
-    ArrayList<Car> stock;
+    ArrayList<Persona> stock;
 
     public StockManager() {
         this.stock = new ArrayList<>();
     }
-    public void addCar(String modelo, String marca, int numeroPuerta, String color){
-        Car car= new Car(modelo,marca,numeroPuerta,color);
-        stock.add(car);
+
+    public void addPersona(String pelo, String piel, Float altura, String nacionalidad) {
+        Persona persona = new Persona(pelo, piel, altura, nacionalidad);
+        stock.add(persona);
 
     }
-    public List<Car> getStock(){
+
+    public List<Persona> getStock() {
         return this.stock;
     }
 
 }
-
