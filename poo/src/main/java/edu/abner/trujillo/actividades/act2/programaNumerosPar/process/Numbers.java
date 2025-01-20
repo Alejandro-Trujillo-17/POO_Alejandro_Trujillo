@@ -1,4 +1,4 @@
-package edu.abner.trujillo.actividades.act2.process;
+package edu.abner.trujillo.actividades.act2.programaNumerosPar.process;
 
 public class Numbers {
     public String GenerarPares() {

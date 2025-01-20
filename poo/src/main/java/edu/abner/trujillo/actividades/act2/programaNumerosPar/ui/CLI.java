@@ -1,6 +1,6 @@
-package edu.abner.trujillo.actividades.act2.ui;
+package edu.abner.trujillo.actividades.act2.programaNumerosPar.ui;
 
-import edu.abner.trujillo.actividades.act2.process.Numbers;
+import edu.abner.trujillo.actividades.act2.programaNumerosPar.process.Numbers;
 
 public class CLI {
     public static void runApp() {
