@@ -1,14 +1,8 @@
 package edu.abner.trujillo.actividades.retos.reto01.process;
 
 public class Reverse {
-    public static void reverse(String[] args) {
-        String input = "Hello World";
-        String reversed = "";
-
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed += input.charAt(i);
-        }
-
-        System.out.println("Reversed String: " + reversed);
+    public String getReverse(String input) {
+        StringBuilder reversed = new StringBuilder(input);
+        return reversed.reverse().toString(); // Invierte la cadena y la devuelve
     }
 }
