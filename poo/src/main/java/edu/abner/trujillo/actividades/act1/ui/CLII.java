@@ -6,7 +6,7 @@ import java.util.Scanner;
 import edu.abner.trujillo.actividades.act1.models.Persona;
 import edu.abner.trujillo.actividades.act1.process.StockManager;
 
-public class CLI {
+public class CLII {
 
     public static void runApp() {
         StockManager stockManager = new StockManager();
