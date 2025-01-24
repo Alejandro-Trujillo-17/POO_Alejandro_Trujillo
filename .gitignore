@@ -1,4 +1,3 @@
 *.class
 *.iml
-*.DS_Sto
-/target/
+*.DS_Store
