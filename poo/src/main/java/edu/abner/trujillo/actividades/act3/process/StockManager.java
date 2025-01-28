@@ -1,9 +1,9 @@
-package edu.abner.trujillo.actividades.act1.process;
+package edu.abner.trujillo.actividades.act3.process;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.abner.trujillo.actividades.act1.models.Persona;
+import edu.abner.trujillo.actividades.act3.models.Persona;
 
 public class StockManager {
     ArrayList<Persona> stock;

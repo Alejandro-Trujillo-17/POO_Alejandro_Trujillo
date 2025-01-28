@@ -1,10 +1,10 @@
-package edu.abner.trujillo.actividades.act1.ui;
+package edu.abner.trujillo.actividades.act3.ui;
 
 //import java.lang.foreign.Linker;
 import java.util.Scanner;
 
-import edu.abner.trujillo.actividades.act1.models.Persona;
-import edu.abner.trujillo.actividades.act1.process.StockManager;
+import edu.abner.trujillo.actividades.act3.models.Persona;
+import edu.abner.trujillo.actividades.act3.process.StockManager;
 
 public class CLII {
 

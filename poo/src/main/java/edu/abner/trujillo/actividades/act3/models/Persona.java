@@ -1,4 +1,4 @@
-package edu.abner.trujillo.actividades.act1.models;
+package edu.abner.trujillo.actividades.act3.models;
 
 public class Persona {
     private String pelo;
