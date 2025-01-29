@@ -3,60 +3,45 @@ package edu.abner.trujillo.actividades.act3.ui;
 //import java.lang.foreign.Linker;
 import java.util.Scanner;
 
-import edu.abner.trujillo.actividades.act3.models.Persona;
+import edu.abner.trujillo.actividades.act3.models.Veiculo;
 import edu.abner.trujillo.actividades.act3.process.StockManager;
 
 public class CLII {
+  public static void runApp(){
+    Scanner entrada = new Scanner (System.in);
+    String marca, modelo, color;
+    float precio, ano, pasajeros;
+    int numeroV,indiceB;
 
-    public static void runApp() {
-        StockManager stockManager = new StockManager();
-        showMenu();
-        try (Scanner scanner = new Scanner(System.in)) {
-            int opcion = scanner.nextInt();
-            while (opcion != 3) {
-                switch (opcion) {
-                    case 1 -> {
-                        System.out.println("Introduce altura");
-                        Float altura = (float) scanner.nextInt();
-                        scanner.nextLine();
+    System.out.print("\npon la cantidad de veiculos: ");
+    numeroV = entrada.nextInt();
 
-                        System.out.println("Introduce el el color de piel");
-                        String piel = scanner.nextLine();
+    Veiculo coches[] =new Veiculo[numeroV];
 
-                        System.out.println("Introduce el color de pelo");
-                        String pelo = scanner.nextLine();
+    for(int i=0;i<coches.length;i++){
+      entrada.nextLine();
+    System.out.print("\ncaracteristicas del coche "+(i+1)+":");
+    System.out.print("\nmarca: ");
+    marca=entrada.nextLine();
+    System.out.print("\nmodelo: ");
+    modelo=entrada.nextLine();
+    System.out.print("\nprecio: ");
+    precio=entrada.nextFloat();
+    System.out.print("\nanio: ");
+    ano=entrada.nextFloat();
+    System.out.print("\ncupo de pasajeros: ");
+    pasajeros=entrada.nextFloat();
+    System.out.print("\ncolor: ");
+    color=entrada.nextLine();
+      
 
-                        System.out.println("Introduce la nacionalidad");
-                        String nacionalidad = scanner.nextLine();
-                        stockManager.addPersona(pelo, piel, altura, nacionalidad);
-                    }
-                    case 2 -> {
-                        int i = 1;
-                        for (Persona persona : stockManager.getStock()) {
-                            System.out.println("Persona N." + i + ":");
-                            System.out.println("    Altura:" + persona.getAltura());
-                            System.out.println("    Piel:" + persona.getPiel());
-                            System.out.println("    Pelo:" + persona.getPelo());
-                            System.out.println("    Nacionalidad:" + persona.getNacionalidad());
-                            i++;
-
-                        }
-
-                    }
-                    default -> System.out.println("opcion no valida");
-                }
-                showMenu();
-                opcion = scanner.nextInt();
-            }
-        }
+    coches[i]=new Veiculo(marca,modelo,color,precio,pasajeros,ano);
+      
     }
+    StockManager sm = new StockManager();
 
-    public static void showMenu() {
-        System.out.println("""
-                \nMenu
-                1. Agregar Persona
-                2. mostrar Personas
-                3. Salir
-                """);
-    }
+    indiceB=sm.indiceCocheMBarato(coches);
+    System.out.print("\nel coche mas bara es: \n");
+    System.out.print(coches[indiceB].mostrarDatos());
+  }
 }

@@ -1,25 +1,19 @@
 package edu.abner.trujillo.actividades.act3.process;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import edu.abner.trujillo.actividades.act3.models.Persona;
+import edu.abner.trujillo.actividades.act3.models.Veiculo;
 
 public class StockManager {
-    ArrayList<Persona> stock;
-
-    public StockManager() {
-        this.stock = new ArrayList<>();
+    public static int indiceCocheMBarato(Veiculo coches[]) {
+    float precio;
+    int  indice = 0;
+    precio = coches[0].getPrecio();
+    for(int i=1; i<coches.length;i++){
+      if(coches[i].getPrecio()<precio){
+        precio = coches[i].getPrecio();
+      indice = i;
+      }
     }
-
-    public void addPersona(String pelo, String piel, Float altura, String nacionalidad) {
-        Persona persona = new Persona(pelo, piel, altura, nacionalidad);
-        stock.add(persona);
-
-    }
-
-    public List<Persona> getStock() {
-        return this.stock;
-    }
+    return indice;
+  }
 
 }
