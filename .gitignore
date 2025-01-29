@@ -1,2 +1,7 @@
-.class
-.iml
+*.class
+*.iml
+*.DS_Store
+*/src
+*/target
+*/src
+*/.vscode
