@@ -10,7 +10,7 @@ public class CLII {
   public static void runApp(){
     Scanner entrada = new Scanner (System.in);
     String marca, modelo, color;
-    float precio, ano, pasajeros;
+    float precio, ano, pasajeros,impuestos = 0;
     int numeroV,indiceB;
 
     System.out.print("\npon la cantidad de veiculos: ");
@@ -35,7 +35,7 @@ public class CLII {
     color=entrada.nextLine();
       
 
-    coches[i]=new Veiculo(marca,modelo,color,precio,pasajeros,ano);
+    coches[i]=new Veiculo(marca,modelo,color,precio,pasajeros,ano,impuestos);
       
     }
     StockManager sm = new StockManager();
@@ -43,5 +43,7 @@ public class CLII {
     indiceB=sm.indiceCocheMBarato(coches);
     System.out.print("\nel coche mas bara es: \n");
     System.out.print(coches[indiceB].mostrarDatos());
+    float precioConImpuesto = sm.calcularPrecioConImpuesto(coches[indiceB]);
+System.out.print("\nPrecio con impuesto: " + precioConImpuesto);
   }
 }
