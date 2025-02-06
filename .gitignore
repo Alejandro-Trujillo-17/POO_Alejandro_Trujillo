@@ -2,6 +2,6 @@
 *.iml
 *.DS_Store
 */src
-*/target
-*/src
-*/.vscode
+target/
+src/
+vscode/
